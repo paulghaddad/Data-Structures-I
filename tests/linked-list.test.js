@@ -37,6 +37,7 @@ describe('LinkedList', () => {
     list.addToTail('hello');
     list.addToTail(true);
     expect(list.contains('hello')).toBe(true);
+    expect(list.contains(true)).toBe(true);
     expect(list.contains('asdf')).toBe(false);
   });
 
