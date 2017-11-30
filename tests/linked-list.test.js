@@ -64,4 +64,11 @@ describe('LinkedList', () => {
     list.removeHead();
     expect(list.contains(1)).toBe(false);
   });
+
+  it('can be traversed from the tail to the head', () => {
+    list.addToTail(1);
+    list.addToTail(2);
+    list.addToTail(3);
+    expect(list.tail.previous.previous.value).toBe(1);
+  });
 });
