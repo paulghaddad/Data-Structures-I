@@ -37,6 +37,7 @@ describe('LinkedList', () => {
     list.addToTail('hello');
     list.addToTail(true);
     expect(list.contains('hello')).toBe(true);
+    expect(list.contains(true)).toBe(true);
     expect(list.contains('asdf')).toBe(false);
   });
 
@@ -62,5 +63,12 @@ describe('LinkedList', () => {
     list.addToTail(4);
     list.removeHead();
     expect(list.contains(1)).toBe(false);
+  });
+
+  it('can be traversed from the tail to the head', () => {
+    list.addToTail(1);
+    list.addToTail(2);
+    list.addToTail(3);
+    expect(list.tail.previous.previous.value).toBe(1);
   });
 });
